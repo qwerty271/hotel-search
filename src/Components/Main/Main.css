@@ -1,0 +1,275 @@
+.main {
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 32px;
+}
+
+.header__title {
+  margin: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  color: #424242;
+}
+
+.header__button:hover {
+  cursor: pointer;
+}
+
+.favorites {
+  width: 296px;
+  height: 408px;
+  background: #ffffff;
+  box-shadow: 0px 4px 33px rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  padding: 32px;
+  margin-top: 24px;
+}
+
+.favorites__title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #424242;
+  margin: 0 0 32px 0;
+}
+
+.rating {
+  background: #ffffff;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-bottom: 32px;
+}
+
+.rating:hover {
+  cursor: pointer;
+}
+
+.rating:nth-of-type(1) {
+  margin-right: 8px;
+}
+
+.rating_selected {
+  border: 1px solid #41522e;
+  color: #41522e;
+}
+
+.rating_unselected {
+  border: 1px solid #e5e5e5;
+  color: #99a0a3;
+}
+
+.rating__img {
+  vertical-align: middle;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: minmax(min-content, 360px) minmax(min-content, 664px);
+  grid-column-gap: 24px;
+  margin-bottom: 30px;
+}
+
+.hotels {
+  width: 600px;
+  height: 806px;
+  background: #ffffff;
+  box-shadow: 0px 4px 33px rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  padding: 50px 32px;
+}
+
+.hotels__pointer {
+  margin: 0 20px;
+}
+
+.hotels__title {
+  margin: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 37px;
+  display: flex;
+  align-items: center;
+  color: #424242;
+}
+
+.hotels__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.hotels__date {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #41522e;
+  margin: 0;
+}
+
+.hotels_favorites {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 22px;
+  color: #424242;
+  margin: 28px 0 12px 0;
+}
+
+.hotels_favorites_bold {
+  font-weight: 500;
+  color: #41522e;
+}
+
+.hotels__contain {
+  overflow: auto;
+  width: 572px;
+  height: 501px;
+  padding: 14px;
+}
+
+.hotels__contain::-webkit-scrollbar {
+  background: #e7e7e7;
+  border-radius: 2px;
+  width: 2px;
+}
+
+.hotels__contain::-webkit-scrollbar-thumb {
+  background: #41522e;
+  border-radius: 2px;
+  width: 2px;
+}
+
+.hotels__contain::-webkit-scrollbar-track {
+  background: #e7e7e7;
+  border-radius: 2px;
+  width: 2px;
+}
+
+.carousel {
+  display: flex;
+  height: 149px;
+  min-width: 100%;
+  overflow-x: auto;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.test {
+  min-width: 164px;
+  height: 149px;
+  background-color: #424242;
+  margin-left: 15px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-164px * 3));
+  }
+}
+
+.slider {
+  background: white;
+  height: 149px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 600px;
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.slider::after,
+.slider::before {
+  content: "";
+  height: 149px;
+  position: absolute;
+  width: 164px;
+  z-index: 2;
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slide-track {
+  display: flex;
+  width: calc(164px * 9);
+}
+
+.slider:hover > .slide-track {
+  animation: scroll 5s linear infinite;
+}
+
+.slide {
+  height: 149px;
+  width: 164px;
+  border-radius: 10px;
+}
+
+.line {
+  margin: 16px 0;
+  background: rgba(135, 135, 135, 0.2);
+  border-radius: 8px;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.hotels__contain > .line:nth-last-of-type() {
+  position: fixed;
+  visibility: hidden;
+}
+
+.favorites-contain {
+  height: 300px;
+  padding-right: 15px;
+  overflow: auto;
+}
+
+.favorites-contain::-webkit-scrollbar {
+  background: #e7e7e7;
+  border-radius: 2px;
+  width: 2px;
+}
+
+.favorites-contain::-webkit-scrollbar-thumb {
+  background: #41522e;
+  border-radius: 2px;
+  width: 2px;
+}
+
+.favorites-contain::-webkit-scrollbar-track {
+  background: #e7e7e7;
+  border-radius: 2px;
+  width: 2px;
+}

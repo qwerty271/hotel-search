@@ -1,0 +1,16 @@
+.login {
+  background-image: url(../../images/back_login.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.cover {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+}
