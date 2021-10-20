@@ -44,7 +44,10 @@ function Form(props) {
         return errors;
       }}
       onSubmit={(values, { resetForm }) => {
-        const date = values.date.split(".").reverse().join("-");
+        let date;
+        props.type !== "login"
+          ? (date = values.date.split(".").reverse().join("-"))
+          : (date = "");
         props.type === "login"
           ? props.formSubmit()
           : props.formSubmit(date, values.days, values.location);

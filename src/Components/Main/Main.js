@@ -13,7 +13,7 @@ import { useDispatch, connect } from "react-redux";
 import { getHotelPrice, sortByPrice, sortByStars } from "../Redux/actions";
 
 function Main(props) {
-  const [selected, setSelected] = React.useState("rating");
+  const [selected, setSelected] = React.useState("");
   const dispatch = useDispatch();
   const month =
     new Date().getMonth() + 1 < 10
@@ -28,17 +28,13 @@ function Main(props) {
   }, [dispatch, checkIn, destructureDate]);
 
   function changeRating() {
-    if (selected === "rating") {
-      setSelected("price");
-      dispatch(sortByPrice());
-    }
+    setSelected("price");
+    dispatch(sortByPrice());
   }
 
   function changePrice() {
-    if (selected === "price") {
-      setSelected("rating");
-      dispatch(sortByStars());
-    }
+    setSelected("rating");
+    dispatch(sortByStars());
   }
 
   function numberTranslation(number, titles) {
