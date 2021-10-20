@@ -54,11 +54,10 @@ function App() {
   return (
     <div className="page">
       <Switch>
-        <Route path="/login">
+        <Route exact path="/login">
           <Login formSubmit={formLogin} />
         </Route>
         <ProtectedRoute
-          exact
           path="/"
           type={loggedIn}
           component={Main}
